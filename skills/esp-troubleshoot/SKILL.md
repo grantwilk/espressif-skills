@@ -8,7 +8,7 @@ description: Fast fixes for the most common ESP-IDF, esptool, flashing, monitor,
 | Symptom | Fix |
 | --- | --- |
 | `Failed to connect ... No serial data received` / `Wrong boot mode` | `esp-enter-download-mode`; check cable (data-capable), port, power; close other serial tools |
-| `Could not open <PORT>`, busy, permission denied | Another program holds it (monitor, IDE, OpenOCD). Linux: serial group (`esp-detect-device`) |
+| `Could not open <PORT>`, busy, permission denied | Another program holds it (often a leftover `esp_idf_monitor`). Find it: Windows `Get-CimInstance Win32_Process \| ? CommandLine -match <PORT>`, Linux/macOS `lsof <PORT>`; close it (ask first if it is the user's). Linux: serial group (`esp-detect-device`) |
 | `Serial data stream stopped` / transfer errors | Lower baud (`-b 115200`), shorter cable, no hub |
 | `This chip is ESP32-C3 not ESP32` / chip mismatch | `idf.py set-target <TARGET>` then rebuild (`esp-idf-set-target`) |
 | `idf.py: command not found` | Activate env (`esp-idf-activate-env`) |

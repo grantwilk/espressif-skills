@@ -15,7 +15,7 @@ parttool.py -p <PORT> read_partition --partition-name nvs --output nvs.bin   # a
 Inspect:
 
 ```bash
-esptool image-info app.bin                                   # chip, segments, flash settings, app version/date
+esptool image-info app.bin                                   # needs a COMPLETE image (a truncated dump fails with "End of file reading segment")
 esptool --port <PORT> read-flash 0x8000 0x1000 pt.bin        # partition table (default offset 0x8000)
 python $IDF_PATH/components/partition_table/gen_esp32part.py pt.bin   # table as CSV (offsets and sizes)
 python -c "d=open('full.bin','rb').read(); open('app.bin','wb').write(d[0x10000:0x10000+0x180000])"   # slice a partition from a full dump
