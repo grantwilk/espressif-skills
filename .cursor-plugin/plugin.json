@@ -1,0 +1,13 @@
+{
+  "name": "espressif-skills",
+  "displayName": "Espressif Skills",
+  "description": "Atomic agent skills for the Espressif software toolchain: install, build, flash, monitor, log capture, firmware dump, debugging, and more for ESP-IDF, esptool, OpenOCD, and related tools.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Grant Wilk"
+  },
+  "homepage": "https://github.com/grantwilk/espressif-skills",
+  "repository": "https://github.com/grantwilk/espressif-skills",
+  "license": "MIT",
+  "keywords": ["esp-idf", "espressif", "esp32", "esptool", "openocd", "firmware", "embedded", "flash", "idf.py"]
+}
